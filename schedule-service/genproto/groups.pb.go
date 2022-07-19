@@ -26,6 +26,571 @@ var _ = math.Inf
 // proto package needs to be updated.
 const _ = proto.ProtoPackageIsVersion3 // please upgrade the proto package
 
+type ListGroupsReq struct {
+	CompanyId            string   `protobuf:"bytes,1,opt,name=company_id,json=companyId,proto3" json:"company_id"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *ListGroupsReq) Reset()         { *m = ListGroupsReq{} }
+func (m *ListGroupsReq) String() string { return proto.CompactTextString(m) }
+func (*ListGroupsReq) ProtoMessage()    {}
+func (*ListGroupsReq) Descriptor() ([]byte, []int) {
+	return fileDescriptor_6616980d7c5e2870, []int{0}
+}
+func (m *ListGroupsReq) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *ListGroupsReq) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	if deterministic {
+		return xxx_messageInfo_ListGroupsReq.Marshal(b, m, deterministic)
+	} else {
+		b = b[:cap(b)]
+		n, err := m.MarshalToSizedBuffer(b)
+		if err != nil {
+			return nil, err
+		}
+		return b[:n], nil
+	}
+}
+func (m *ListGroupsReq) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_ListGroupsReq.Merge(m, src)
+}
+func (m *ListGroupsReq) XXX_Size() int {
+	return m.Size()
+}
+func (m *ListGroupsReq) XXX_DiscardUnknown() {
+	xxx_messageInfo_ListGroupsReq.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_ListGroupsReq proto.InternalMessageInfo
+
+func (m *ListGroupsReq) GetCompanyId() string {
+	if m != nil {
+		return m.CompanyId
+	}
+	return ""
+}
+
+type ListGroupsRes struct {
+	Groups               []*ListGroups `protobuf:"bytes,1,rep,name=groups,proto3" json:"groups"`
+	XXX_NoUnkeyedLiteral struct{}      `json:"-"`
+	XXX_unrecognized     []byte        `json:"-"`
+	XXX_sizecache        int32         `json:"-"`
+}
+
+func (m *ListGroupsRes) Reset()         { *m = ListGroupsRes{} }
+func (m *ListGroupsRes) String() string { return proto.CompactTextString(m) }
+func (*ListGroupsRes) ProtoMessage()    {}
+func (*ListGroupsRes) Descriptor() ([]byte, []int) {
+	return fileDescriptor_6616980d7c5e2870, []int{1}
+}
+func (m *ListGroupsRes) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *ListGroupsRes) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	if deterministic {
+		return xxx_messageInfo_ListGroupsRes.Marshal(b, m, deterministic)
+	} else {
+		b = b[:cap(b)]
+		n, err := m.MarshalToSizedBuffer(b)
+		if err != nil {
+			return nil, err
+		}
+		return b[:n], nil
+	}
+}
+func (m *ListGroupsRes) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_ListGroupsRes.Merge(m, src)
+}
+func (m *ListGroupsRes) XXX_Size() int {
+	return m.Size()
+}
+func (m *ListGroupsRes) XXX_DiscardUnknown() {
+	xxx_messageInfo_ListGroupsRes.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_ListGroupsRes proto.InternalMessageInfo
+
+func (m *ListGroupsRes) GetGroups() []*ListGroups {
+	if m != nil {
+		return m.Groups
+	}
+	return nil
+}
+
+type ListGroups struct {
+	Id                   string   `protobuf:"bytes,1,opt,name=id,proto3" json:"id"`
+	GroupName            string   `protobuf:"bytes,2,opt,name=group_name,json=groupName,proto3" json:"group_name"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *ListGroups) Reset()         { *m = ListGroups{} }
+func (m *ListGroups) String() string { return proto.CompactTextString(m) }
+func (*ListGroups) ProtoMessage()    {}
+func (*ListGroups) Descriptor() ([]byte, []int) {
+	return fileDescriptor_6616980d7c5e2870, []int{2}
+}
+func (m *ListGroups) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *ListGroups) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	if deterministic {
+		return xxx_messageInfo_ListGroups.Marshal(b, m, deterministic)
+	} else {
+		b = b[:cap(b)]
+		n, err := m.MarshalToSizedBuffer(b)
+		if err != nil {
+			return nil, err
+		}
+		return b[:n], nil
+	}
+}
+func (m *ListGroups) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_ListGroups.Merge(m, src)
+}
+func (m *ListGroups) XXX_Size() int {
+	return m.Size()
+}
+func (m *ListGroups) XXX_DiscardUnknown() {
+	xxx_messageInfo_ListGroups.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_ListGroups proto.InternalMessageInfo
+
+func (m *ListGroups) GetId() string {
+	if m != nil {
+		return m.Id
+	}
+	return ""
+}
+
+func (m *ListGroups) GetGroupName() string {
+	if m != nil {
+		return m.GroupName
+	}
+	return ""
+}
+
+type GetGroupReq struct {
+	Id                   string   `protobuf:"bytes,1,opt,name=id,proto3" json:"id"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *GetGroupReq) Reset()         { *m = GetGroupReq{} }
+func (m *GetGroupReq) String() string { return proto.CompactTextString(m) }
+func (*GetGroupReq) ProtoMessage()    {}
+func (*GetGroupReq) Descriptor() ([]byte, []int) {
+	return fileDescriptor_6616980d7c5e2870, []int{3}
+}
+func (m *GetGroupReq) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *GetGroupReq) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	if deterministic {
+		return xxx_messageInfo_GetGroupReq.Marshal(b, m, deterministic)
+	} else {
+		b = b[:cap(b)]
+		n, err := m.MarshalToSizedBuffer(b)
+		if err != nil {
+			return nil, err
+		}
+		return b[:n], nil
+	}
+}
+func (m *GetGroupReq) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_GetGroupReq.Merge(m, src)
+}
+func (m *GetGroupReq) XXX_Size() int {
+	return m.Size()
+}
+func (m *GetGroupReq) XXX_DiscardUnknown() {
+	xxx_messageInfo_GetGroupReq.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_GetGroupReq proto.InternalMessageInfo
+
+func (m *GetGroupReq) GetId() string {
+	if m != nil {
+		return m.Id
+	}
+	return ""
+}
+
+type GetGroupRes struct {
+	Students             []*GetGrooup `protobuf:"bytes,1,rep,name=students,proto3" json:"students"`
+	XXX_NoUnkeyedLiteral struct{}     `json:"-"`
+	XXX_unrecognized     []byte       `json:"-"`
+	XXX_sizecache        int32        `json:"-"`
+}
+
+func (m *GetGroupRes) Reset()         { *m = GetGroupRes{} }
+func (m *GetGroupRes) String() string { return proto.CompactTextString(m) }
+func (*GetGroupRes) ProtoMessage()    {}
+func (*GetGroupRes) Descriptor() ([]byte, []int) {
+	return fileDescriptor_6616980d7c5e2870, []int{4}
+}
+func (m *GetGroupRes) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *GetGroupRes) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	if deterministic {
+		return xxx_messageInfo_GetGroupRes.Marshal(b, m, deterministic)
+	} else {
+		b = b[:cap(b)]
+		n, err := m.MarshalToSizedBuffer(b)
+		if err != nil {
+			return nil, err
+		}
+		return b[:n], nil
+	}
+}
+func (m *GetGroupRes) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_GetGroupRes.Merge(m, src)
+}
+func (m *GetGroupRes) XXX_Size() int {
+	return m.Size()
+}
+func (m *GetGroupRes) XXX_DiscardUnknown() {
+	xxx_messageInfo_GetGroupRes.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_GetGroupRes proto.InternalMessageInfo
+
+func (m *GetGroupRes) GetStudents() []*GetGrooup {
+	if m != nil {
+		return m.Students
+	}
+	return nil
+}
+
+type GetGrooup struct {
+	Id                   string   `protobuf:"bytes,1,opt,name=id,proto3" json:"id"`
+	GroupId              string   `protobuf:"bytes,2,opt,name=group_id,json=groupId,proto3" json:"group_id"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *GetGrooup) Reset()         { *m = GetGrooup{} }
+func (m *GetGrooup) String() string { return proto.CompactTextString(m) }
+func (*GetGrooup) ProtoMessage()    {}
+func (*GetGrooup) Descriptor() ([]byte, []int) {
+	return fileDescriptor_6616980d7c5e2870, []int{5}
+}
+func (m *GetGrooup) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *GetGrooup) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	if deterministic {
+		return xxx_messageInfo_GetGrooup.Marshal(b, m, deterministic)
+	} else {
+		b = b[:cap(b)]
+		n, err := m.MarshalToSizedBuffer(b)
+		if err != nil {
+			return nil, err
+		}
+		return b[:n], nil
+	}
+}
+func (m *GetGrooup) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_GetGrooup.Merge(m, src)
+}
+func (m *GetGrooup) XXX_Size() int {
+	return m.Size()
+}
+func (m *GetGrooup) XXX_DiscardUnknown() {
+	xxx_messageInfo_GetGrooup.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_GetGrooup proto.InternalMessageInfo
+
+func (m *GetGrooup) GetId() string {
+	if m != nil {
+		return m.Id
+	}
+	return ""
+}
+
+func (m *GetGrooup) GetGroupId() string {
+	if m != nil {
+		return m.GroupId
+	}
+	return ""
+}
+
+type AttandenceRequa struct {
+	Id                   string   `protobuf:"bytes,1,opt,name=id,proto3" json:"id"`
+	StudentId            string   `protobuf:"bytes,2,opt,name=student_id,json=studentId,proto3" json:"student_id"`
+	GroupId              string   `protobuf:"bytes,3,opt,name=group_id,json=groupId,proto3" json:"group_id"`
+	Attendance           bool     `protobuf:"varint,4,opt,name=attendance,proto3" json:"attendance"`
+	AttendanceDate       string   `protobuf:"bytes,5,opt,name=attendance_date,json=attendanceDate,proto3" json:"attendance_date"`
+	Feedback             string   `protobuf:"bytes,6,opt,name=feedback,proto3" json:"feedback"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *AttandenceRequa) Reset()         { *m = AttandenceRequa{} }
+func (m *AttandenceRequa) String() string { return proto.CompactTextString(m) }
+func (*AttandenceRequa) ProtoMessage()    {}
+func (*AttandenceRequa) Descriptor() ([]byte, []int) {
+	return fileDescriptor_6616980d7c5e2870, []int{6}
+}
+func (m *AttandenceRequa) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *AttandenceRequa) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	if deterministic {
+		return xxx_messageInfo_AttandenceRequa.Marshal(b, m, deterministic)
+	} else {
+		b = b[:cap(b)]
+		n, err := m.MarshalToSizedBuffer(b)
+		if err != nil {
+			return nil, err
+		}
+		return b[:n], nil
+	}
+}
+func (m *AttandenceRequa) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_AttandenceRequa.Merge(m, src)
+}
+func (m *AttandenceRequa) XXX_Size() int {
+	return m.Size()
+}
+func (m *AttandenceRequa) XXX_DiscardUnknown() {
+	xxx_messageInfo_AttandenceRequa.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_AttandenceRequa proto.InternalMessageInfo
+
+func (m *AttandenceRequa) GetId() string {
+	if m != nil {
+		return m.Id
+	}
+	return ""
+}
+
+func (m *AttandenceRequa) GetStudentId() string {
+	if m != nil {
+		return m.StudentId
+	}
+	return ""
+}
+
+func (m *AttandenceRequa) GetGroupId() string {
+	if m != nil {
+		return m.GroupId
+	}
+	return ""
+}
+
+func (m *AttandenceRequa) GetAttendance() bool {
+	if m != nil {
+		return m.Attendance
+	}
+	return false
+}
+
+func (m *AttandenceRequa) GetAttendanceDate() string {
+	if m != nil {
+		return m.AttendanceDate
+	}
+	return ""
+}
+
+func (m *AttandenceRequa) GetFeedback() string {
+	if m != nil {
+		return m.Feedback
+	}
+	return ""
+}
+
+type AttandenceReq struct {
+	Student              []*AttandenceRequa `protobuf:"bytes,1,rep,name=student,proto3" json:"student"`
+	XXX_NoUnkeyedLiteral struct{}           `json:"-"`
+	XXX_unrecognized     []byte             `json:"-"`
+	XXX_sizecache        int32              `json:"-"`
+}
+
+func (m *AttandenceReq) Reset()         { *m = AttandenceReq{} }
+func (m *AttandenceReq) String() string { return proto.CompactTextString(m) }
+func (*AttandenceReq) ProtoMessage()    {}
+func (*AttandenceReq) Descriptor() ([]byte, []int) {
+	return fileDescriptor_6616980d7c5e2870, []int{7}
+}
+func (m *AttandenceReq) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *AttandenceReq) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	if deterministic {
+		return xxx_messageInfo_AttandenceReq.Marshal(b, m, deterministic)
+	} else {
+		b = b[:cap(b)]
+		n, err := m.MarshalToSizedBuffer(b)
+		if err != nil {
+			return nil, err
+		}
+		return b[:n], nil
+	}
+}
+func (m *AttandenceReq) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_AttandenceReq.Merge(m, src)
+}
+func (m *AttandenceReq) XXX_Size() int {
+	return m.Size()
+}
+func (m *AttandenceReq) XXX_DiscardUnknown() {
+	xxx_messageInfo_AttandenceReq.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_AttandenceReq proto.InternalMessageInfo
+
+func (m *AttandenceReq) GetStudent() []*AttandenceRequa {
+	if m != nil {
+		return m.Student
+	}
+	return nil
+}
+
+type GetByIdReq struct {
+	Id                   string   `protobuf:"bytes,1,opt,name=id,proto3" json:"id"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *GetByIdReq) Reset()         { *m = GetByIdReq{} }
+func (m *GetByIdReq) String() string { return proto.CompactTextString(m) }
+func (*GetByIdReq) ProtoMessage()    {}
+func (*GetByIdReq) Descriptor() ([]byte, []int) {
+	return fileDescriptor_6616980d7c5e2870, []int{8}
+}
+func (m *GetByIdReq) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *GetByIdReq) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	if deterministic {
+		return xxx_messageInfo_GetByIdReq.Marshal(b, m, deterministic)
+	} else {
+		b = b[:cap(b)]
+		n, err := m.MarshalToSizedBuffer(b)
+		if err != nil {
+			return nil, err
+		}
+		return b[:n], nil
+	}
+}
+func (m *GetByIdReq) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_GetByIdReq.Merge(m, src)
+}
+func (m *GetByIdReq) XXX_Size() int {
+	return m.Size()
+}
+func (m *GetByIdReq) XXX_DiscardUnknown() {
+	xxx_messageInfo_GetByIdReq.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_GetByIdReq proto.InternalMessageInfo
+
+func (m *GetByIdReq) GetId() string {
+	if m != nil {
+		return m.Id
+	}
+	return ""
+}
+
+type GetByIdRes struct {
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *GetByIdRes) Reset()         { *m = GetByIdRes{} }
+func (m *GetByIdRes) String() string { return proto.CompactTextString(m) }
+func (*GetByIdRes) ProtoMessage()    {}
+func (*GetByIdRes) Descriptor() ([]byte, []int) {
+	return fileDescriptor_6616980d7c5e2870, []int{9}
+}
+func (m *GetByIdRes) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *GetByIdRes) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	if deterministic {
+		return xxx_messageInfo_GetByIdRes.Marshal(b, m, deterministic)
+	} else {
+		b = b[:cap(b)]
+		n, err := m.MarshalToSizedBuffer(b)
+		if err != nil {
+			return nil, err
+		}
+		return b[:n], nil
+	}
+}
+func (m *GetByIdRes) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_GetByIdRes.Merge(m, src)
+}
+func (m *GetByIdRes) XXX_Size() int {
+	return m.Size()
+}
+func (m *GetByIdRes) XXX_DiscardUnknown() {
+	xxx_messageInfo_GetByIdRes.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_GetByIdRes proto.InternalMessageInfo
+
+type DeleteGroupReq struct {
+	Id                   string   `protobuf:"bytes,1,opt,name=id,proto3" json:"id"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *DeleteGroupReq) Reset()         { *m = DeleteGroupReq{} }
+func (m *DeleteGroupReq) String() string { return proto.CompactTextString(m) }
+func (*DeleteGroupReq) ProtoMessage()    {}
+func (*DeleteGroupReq) Descriptor() ([]byte, []int) {
+	return fileDescriptor_6616980d7c5e2870, []int{10}
+}
+func (m *DeleteGroupReq) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *DeleteGroupReq) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	if deterministic {
+		return xxx_messageInfo_DeleteGroupReq.Marshal(b, m, deterministic)
+	} else {
+		b = b[:cap(b)]
+		n, err := m.MarshalToSizedBuffer(b)
+		if err != nil {
+			return nil, err
+		}
+		return b[:n], nil
+	}
+}
+func (m *DeleteGroupReq) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_DeleteGroupReq.Merge(m, src)
+}
+func (m *DeleteGroupReq) XXX_Size() int {
+	return m.Size()
+}
+func (m *DeleteGroupReq) XXX_DiscardUnknown() {
+	xxx_messageInfo_DeleteGroupReq.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_DeleteGroupReq proto.InternalMessageInfo
+
+func (m *DeleteGroupReq) GetId() string {
+	if m != nil {
+		return m.Id
+	}
+	return ""
+}
+
 type CreateGroupReq struct {
 	Id                   string   `protobuf:"bytes,1,opt,name=id,proto3" json:"id"`
 	CompanyName          string   `protobuf:"bytes,2,opt,name=company_name,json=companyName,proto3" json:"company_name"`
@@ -43,7 +608,7 @@ func (m *CreateGroupReq) Reset()         { *m = CreateGroupReq{} }
 func (m *CreateGroupReq) String() string { return proto.CompactTextString(m) }
 func (*CreateGroupReq) ProtoMessage()    {}
 func (*CreateGroupReq) Descriptor() ([]byte, []int) {
-	return fileDescriptor_6616980d7c5e2870, []int{0}
+	return fileDescriptor_6616980d7c5e2870, []int{11}
 }
 func (m *CreateGroupReq) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -133,7 +698,7 @@ func (m *CreateGroupRes) Reset()         { *m = CreateGroupRes{} }
 func (m *CreateGroupRes) String() string { return proto.CompactTextString(m) }
 func (*CreateGroupRes) ProtoMessage()    {}
 func (*CreateGroupRes) Descriptor() ([]byte, []int) {
-	return fileDescriptor_6616980d7c5e2870, []int{1}
+	return fileDescriptor_6616980d7c5e2870, []int{12}
 }
 func (m *CreateGroupRes) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -191,7 +756,7 @@ func (m *UpdateGroupReq) Reset()         { *m = UpdateGroupReq{} }
 func (m *UpdateGroupReq) String() string { return proto.CompactTextString(m) }
 func (*UpdateGroupReq) ProtoMessage()    {}
 func (*UpdateGroupReq) Descriptor() ([]byte, []int) {
-	return fileDescriptor_6616980d7c5e2870, []int{2}
+	return fileDescriptor_6616980d7c5e2870, []int{13}
 }
 func (m *UpdateGroupReq) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -268,7 +833,7 @@ func (m *UpdateGroupRes) Reset()         { *m = UpdateGroupRes{} }
 func (m *UpdateGroupRes) String() string { return proto.CompactTextString(m) }
 func (*UpdateGroupRes) ProtoMessage()    {}
 func (*UpdateGroupRes) Descriptor() ([]byte, []int) {
-	return fileDescriptor_6616980d7c5e2870, []int{3}
+	return fileDescriptor_6616980d7c5e2870, []int{14}
 }
 func (m *UpdateGroupRes) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -329,7 +894,7 @@ func (m *GetAllGroupRes) Reset()         { *m = GetAllGroupRes{} }
 func (m *GetAllGroupRes) String() string { return proto.CompactTextString(m) }
 func (*GetAllGroupRes) ProtoMessage()    {}
 func (*GetAllGroupRes) Descriptor() ([]byte, []int) {
-	return fileDescriptor_6616980d7c5e2870, []int{4}
+	return fileDescriptor_6616980d7c5e2870, []int{15}
 }
 func (m *GetAllGroupRes) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -377,7 +942,7 @@ func (m *Getall) Reset()         { *m = Getall{} }
 func (m *Getall) String() string { return proto.CompactTextString(m) }
 func (*Getall) ProtoMessage()    {}
 func (*Getall) Descriptor() ([]byte, []int) {
-	return fileDescriptor_6616980d7c5e2870, []int{5}
+	return fileDescriptor_6616980d7c5e2870, []int{16}
 }
 func (m *Getall) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -430,7 +995,7 @@ func (m *Empty) Reset()         { *m = Empty{} }
 func (m *Empty) String() string { return proto.CompactTextString(m) }
 func (*Empty) ProtoMessage()    {}
 func (*Empty) Descriptor() ([]byte, []int) {
-	return fileDescriptor_6616980d7c5e2870, []int{6}
+	return fileDescriptor_6616980d7c5e2870, []int{17}
 }
 func (m *Empty) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -460,6 +1025,17 @@ func (m *Empty) XXX_DiscardUnknown() {
 var xxx_messageInfo_Empty proto.InternalMessageInfo
 
 func init() {
+	proto.RegisterType((*ListGroupsReq)(nil), "schedule.ListGroupsReq")
+	proto.RegisterType((*ListGroupsRes)(nil), "schedule.ListGroupsRes")
+	proto.RegisterType((*ListGroups)(nil), "schedule.ListGroups")
+	proto.RegisterType((*GetGroupReq)(nil), "schedule.GetGroupReq")
+	proto.RegisterType((*GetGroupRes)(nil), "schedule.GetGroupRes")
+	proto.RegisterType((*GetGrooup)(nil), "schedule.GetGrooup")
+	proto.RegisterType((*AttandenceRequa)(nil), "schedule.AttandenceRequa")
+	proto.RegisterType((*AttandenceReq)(nil), "schedule.AttandenceReq")
+	proto.RegisterType((*GetByIdReq)(nil), "schedule.GetByIdReq")
+	proto.RegisterType((*GetByIdRes)(nil), "schedule.GetByIdRes")
+	proto.RegisterType((*DeleteGroupReq)(nil), "schedule.DeleteGroupReq")
 	proto.RegisterType((*CreateGroupReq)(nil), "schedule.CreateGroupReq")
 	proto.RegisterType((*CreateGroupRes)(nil), "schedule.CreateGroupRes")
 	proto.RegisterType((*UpdateGroupReq)(nil), "schedule.UpdateGroupReq")
@@ -472,30 +1048,47 @@ func init() {
 func init() { proto.RegisterFile("groups.proto", fileDescriptor_6616980d7c5e2870) }
 
 var fileDescriptor_6616980d7c5e2870 = []byte{
-	// 363 bytes of a gzipped FileDescriptorProto
-	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0xc4, 0x93, 0x41, 0x4f, 0xea, 0x40,
-	0x14, 0x85, 0xdf, 0x94, 0x47, 0x79, 0xdc, 0x92, 0x42, 0x66, 0xf3, 0x1a, 0x13, 0x1a, 0xec, 0x8a,
-	0x15, 0x0b, 0xdc, 0x18, 0x77, 0xd5, 0x28, 0x71, 0xe3, 0xa2, 0xc4, 0x35, 0xa9, 0x9d, 0x1b, 0x6d,
-	0xd2, 0xd2, 0xd2, 0x4e, 0x4d, 0xf8, 0x13, 0xae, 0x8d, 0xbf, 0xc8, 0xa5, 0x4b, 0x97, 0x06, 0xff,
-	0x88, 0x61, 0x66, 0x90, 0x32, 0x44, 0x57, 0x26, 0x2e, 0x7b, 0xbe, 0xb9, 0x39, 0xe7, 0xde, 0x9c,
-	0x42, 0xe7, 0xb6, 0xc8, 0xaa, 0xbc, 0x1c, 0xe5, 0x45, 0xc6, 0x33, 0xfa, 0xaf, 0x8c, 0xee, 0x90,
-	0x55, 0x09, 0x7a, 0xaf, 0x04, 0xec, 0xb3, 0x02, 0x43, 0x8e, 0x93, 0xf5, 0x83, 0x00, 0x17, 0xd4,
-	0x06, 0x23, 0x66, 0x0e, 0x19, 0x90, 0x61, 0x3b, 0x30, 0x62, 0x46, 0x0f, 0xa1, 0x13, 0x65, 0x69,
-	0x1e, 0xce, 0x97, 0xb3, 0x79, 0x98, 0xa2, 0x63, 0x08, 0x62, 0x29, 0xed, 0x2a, 0x4c, 0x91, 0xfe,
-	0x87, 0x56, 0x55, 0x62, 0x31, 0x8b, 0x99, 0xd3, 0x10, 0xd4, 0x5c, 0x7f, 0x5e, 0x32, 0xda, 0x07,
-	0x10, 0xc6, 0x72, 0xf2, 0xaf, 0x60, 0x6d, 0xa1, 0x88, 0xb9, 0x3e, 0x40, 0x24, 0xcc, 0xd9, 0x2c,
-	0xe4, 0x4e, 0x53, 0x62, 0xa5, 0xf8, 0x7c, 0x8d, 0xab, 0x9c, 0x6d, 0xb0, 0x29, 0xb1, 0x52, 0x24,
-	0x66, 0x98, 0xa0, 0xc2, 0x2d, 0x89, 0x95, 0xe2, 0x73, 0x2f, 0xd0, 0x36, 0x2b, 0xf7, 0x36, 0x21,
-	0xfb, 0x9b, 0xec, 0x06, 0x36, 0xb4, 0xc0, 0xde, 0x13, 0x01, 0xfb, 0x5a, 0x04, 0xf8, 0xa5, 0x73,
-	0xd5, 0xee, 0xd1, 0xd4, 0xee, 0xe1, 0x2d, 0xb4, 0x6c, 0x3f, 0xb0, 0xb0, 0x66, 0xd9, 0xd0, 0x2d,
-	0x4f, 0xc0, 0x9e, 0x20, 0xf7, 0x93, 0xe4, 0xd3, 0x72, 0x08, 0xa6, 0xac, 0x9a, 0x43, 0x06, 0x8d,
-	0xa1, 0x35, 0xee, 0x8d, 0x36, 0x5d, 0x1b, 0x4d, 0x90, 0x87, 0x49, 0x12, 0x28, 0xee, 0x5d, 0x80,
-	0x29, 0x15, 0x2d, 0x03, 0xf9, 0xbe, 0x25, 0x86, 0xd6, 0x12, 0xaf, 0x05, 0xcd, 0xf3, 0x34, 0xe7,
-	0xcb, 0xf1, 0x03, 0x81, 0xee, 0x54, 0x99, 0x4d, 0xb1, 0xb8, 0x8f, 0x23, 0xa4, 0x3e, 0x58, 0xb5,
-	0x12, 0x50, 0x67, 0x9b, 0x66, 0xb7, 0xf5, 0x07, 0x5f, 0x91, 0x92, 0x1e, 0x83, 0x55, 0xdb, 0x91,
-	0x76, 0xb7, 0x0f, 0x85, 0x6d, 0x7d, 0x72, 0xf7, 0x16, 0xa7, 0xbd, 0xe7, 0x95, 0x4b, 0x5e, 0x56,
-	0x2e, 0x79, 0x5b, 0xb9, 0xe4, 0xf1, 0xdd, 0xfd, 0x73, 0x63, 0x8a, 0xff, 0xef, 0xe8, 0x23, 0x00,
-	0x00, 0xff, 0xff, 0x46, 0xb8, 0x3e, 0x6e, 0x8f, 0x03, 0x00, 0x00,
+	// 629 bytes of a gzipped FileDescriptorProto
+	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0xc4, 0x55, 0x4d, 0x6f, 0x13, 0x3d,
+	0x10, 0x7e, 0x9d, 0xb6, 0xf9, 0x98, 0xb4, 0x9b, 0xca, 0x2f, 0xa8, 0xdb, 0x88, 0x46, 0xc1, 0x17,
+	0x72, 0x40, 0x41, 0x6a, 0xa5, 0xaa, 0x02, 0x51, 0x29, 0xa5, 0x10, 0x45, 0x42, 0x1c, 0xb6, 0xe2,
+	0x1c, 0xb9, 0xeb, 0x01, 0x22, 0x36, 0x9b, 0x0f, 0x7b, 0x91, 0xfa, 0x4f, 0x10, 0xbf, 0x86, 0x23,
+	0x47, 0x8e, 0x1c, 0x51, 0xf9, 0x17, 0x9c, 0xd0, 0x7a, 0xbd, 0x5f, 0x4e, 0x02, 0x17, 0x24, 0x8e,
+	0x7e, 0xe6, 0xf1, 0x3c, 0xcf, 0xcc, 0x8e, 0x67, 0x61, 0xf7, 0xed, 0x72, 0x16, 0xcd, 0x65, 0x7f,
+	0xbe, 0x9c, 0xa9, 0x19, 0xad, 0x4b, 0xff, 0x1d, 0x8a, 0x28, 0x40, 0xd6, 0x87, 0xbd, 0x97, 0x13,
+	0xa9, 0x86, 0x3a, 0xea, 0xe1, 0x82, 0x1e, 0x01, 0xf8, 0xb3, 0xe9, 0x9c, 0x87, 0x37, 0xe3, 0x89,
+	0x70, 0x49, 0x97, 0xf4, 0x1a, 0x5e, 0xc3, 0x20, 0x23, 0xc1, 0x9e, 0x96, 0xf9, 0x92, 0x3e, 0x84,
+	0x6a, 0x92, 0xda, 0x25, 0xdd, 0xad, 0x5e, 0xf3, 0xf8, 0x4e, 0x3f, 0xcd, 0xdd, 0x2f, 0x10, 0x0d,
+	0x87, 0x3d, 0x01, 0xc8, 0x51, 0xea, 0x40, 0x25, 0xd3, 0xa8, 0x4c, 0x44, 0xac, 0xad, 0x79, 0xe3,
+	0x90, 0x4f, 0xd1, 0xad, 0x24, 0xda, 0x1a, 0x79, 0xc5, 0xa7, 0xc8, 0x8e, 0xa0, 0x39, 0xc4, 0xe4,
+	0x6e, 0xec, 0xd4, 0xba, 0xcd, 0xce, 0x8b, 0x61, 0x49, 0x1f, 0x41, 0x5d, 0xaa, 0x48, 0x60, 0xa8,
+	0x52, 0x6b, 0xff, 0xe7, 0xd6, 0x12, 0x62, 0xcc, 0xcc, 0x48, 0xec, 0x14, 0x1a, 0x19, 0xbc, 0x62,
+	0xed, 0x10, 0xea, 0x89, 0xb5, 0x89, 0x30, 0xc6, 0x6a, 0xfa, 0x3c, 0x12, 0xec, 0x33, 0x81, 0xd6,
+	0x40, 0x29, 0x1e, 0x0a, 0x0c, 0x7d, 0xf4, 0x70, 0x11, 0xf1, 0x75, 0x95, 0x19, 0x9d, 0x3c, 0x41,
+	0xc3, 0x20, 0xa3, 0x72, 0xf6, 0xad, 0x52, 0x76, 0xda, 0x01, 0xe0, 0x4a, 0x61, 0x28, 0x78, 0xe8,
+	0xa3, 0xbb, 0xdd, 0x25, 0xbd, 0xba, 0x57, 0x40, 0xe8, 0x03, 0x68, 0xe5, 0xa7, 0xb1, 0xe0, 0x0a,
+	0xdd, 0x1d, 0x9d, 0xc1, 0xc9, 0xe1, 0x4b, 0xae, 0x90, 0xb6, 0xa1, 0xfe, 0x06, 0x51, 0x5c, 0x73,
+	0xff, 0xbd, 0x5b, 0xd5, 0x8c, 0xec, 0xcc, 0x2e, 0x61, 0xaf, 0x54, 0x01, 0x3d, 0x81, 0x9a, 0x71,
+	0x67, 0x7a, 0x77, 0x98, 0xf7, 0xce, 0xaa, 0xd5, 0x4b, 0x99, 0xec, 0x1e, 0xc0, 0x10, 0xd5, 0xc5,
+	0xcd, 0x48, 0xac, 0xfb, 0x3c, 0xbb, 0x85, 0xa8, 0x64, 0x5d, 0x70, 0x2e, 0x31, 0x40, 0x85, 0x1b,
+	0x3f, 0xe7, 0x37, 0x02, 0xce, 0xb3, 0x25, 0xf2, 0xcd, 0x14, 0x7a, 0x1f, 0x76, 0xd3, 0x59, 0x2d,
+	0x4c, 0x4c, 0xd3, 0x60, 0xf1, 0xcc, 0xd0, 0x03, 0xa8, 0x45, 0x12, 0x97, 0x79, 0x63, 0xab, 0xf1,
+	0x71, 0x64, 0xcf, 0xda, 0xb6, 0x35, 0x6b, 0xfa, 0x19, 0x68, 0x71, 0x31, 0xe6, 0xca, 0x74, 0xb4,
+	0x61, 0x90, 0x81, 0x8a, 0xc3, 0xd1, 0x5c, 0xa4, 0xe1, 0xa4, 0x9d, 0x0d, 0x83, 0x24, 0x61, 0xa1,
+	0xab, 0xd3, 0xe1, 0x5a, 0x12, 0x36, 0xc8, 0x40, 0x31, 0xcf, 0xaa, 0x4c, 0xae, 0x54, 0x42, 0x56,
+	0x2b, 0xf9, 0xc3, 0xe3, 0xf8, 0x44, 0xc0, 0x79, 0xad, 0x0d, 0xfc, 0xa3, 0x76, 0x15, 0xfa, 0xb1,
+	0x63, 0xf5, 0x83, 0x2d, 0x2c, 0x6f, 0x7f, 0xa1, 0x60, 0x4b, 0x72, 0xcb, 0x96, 0x7c, 0x0c, 0xce,
+	0x10, 0xd5, 0x20, 0x08, 0x32, 0xc9, 0x9e, 0xb5, 0xa9, 0xf6, 0x4b, 0xeb, 0x80, 0x07, 0x41, 0xb6,
+	0xa5, 0x5e, 0x40, 0x35, 0x41, 0x2c, 0x0f, 0xe4, 0xf7, 0x53, 0x52, 0xb1, 0xa6, 0x84, 0xd5, 0x60,
+	0xe7, 0xf9, 0x74, 0xae, 0x6e, 0x8e, 0x7f, 0x56, 0xa0, 0x75, 0x65, 0xc4, 0xae, 0x70, 0xf9, 0x61,
+	0xe2, 0x23, 0x1d, 0x40, 0xb3, 0x30, 0x04, 0xd4, 0xcd, 0xdd, 0x94, 0xa7, 0xbe, 0xbd, 0x29, 0x22,
+	0xe9, 0x99, 0xde, 0x78, 0x69, 0x8d, 0xb4, 0x95, 0x13, 0xb5, 0x6c, 0xf1, 0xa6, 0xd5, 0x8b, 0x33,
+	0x68, 0x16, 0x9e, 0x5f, 0x51, 0xbc, 0xfc, 0x2a, 0xdb, 0x76, 0x4e, 0x7a, 0x0a, 0x90, 0x2f, 0x00,
+	0x7a, 0xb0, 0x61, 0x2d, 0xac, 0xde, 0x3b, 0x83, 0x7a, 0xba, 0x9d, 0xe9, 0x5d, 0x7b, 0x11, 0x27,
+	0x5a, 0x6b, 0x61, 0x49, 0xcf, 0x4b, 0xff, 0x8c, 0x83, 0xb5, 0xff, 0x17, 0x5c, 0xb4, 0x37, 0x04,
+	0xe4, 0xc5, 0xfe, 0x97, 0xdb, 0x0e, 0xf9, 0x7a, 0xdb, 0x21, 0xdf, 0x6f, 0x3b, 0xe4, 0xe3, 0x8f,
+	0xce, 0x7f, 0xd7, 0x55, 0xfd, 0x17, 0x3c, 0xf9, 0x15, 0x00, 0x00, 0xff, 0xff, 0x1c, 0xb4, 0xd6,
+	0x3c, 0x15, 0x07, 0x00, 0x00,
 }
 
 // Reference imports to suppress errors if they are not otherwise used.
@@ -513,6 +1106,10 @@ type ScheduleServiceClient interface {
 	CreateGroup(ctx context.Context, in *CreateGroupReq, opts ...grpc.CallOption) (*CreateGroupRes, error)
 	// rpc UpdateGroup(UpdateGroupReq) returns (UpdateGroupRes);
 	GetAllGroup(ctx context.Context, in *Empty, opts ...grpc.CallOption) (*GetAllGroupRes, error)
+	DeleteGroup(ctx context.Context, in *DeleteGroupReq, opts ...grpc.CallOption) (*Empty, error)
+	Attandence(ctx context.Context, in *AttandenceReq, opts ...grpc.CallOption) (*Empty, error)
+	GetGroup(ctx context.Context, in *GetGroupReq, opts ...grpc.CallOption) (*GetGroupRes, error)
+	ListGroups(ctx context.Context, in *ListGroupsReq, opts ...grpc.CallOption) (*ListGroupsRes, error)
 }
 
 type scheduleServiceClient struct {
@@ -541,11 +1138,51 @@ func (c *scheduleServiceClient) GetAllGroup(ctx context.Context, in *Empty, opts
 	return out, nil
 }
 
+func (c *scheduleServiceClient) DeleteGroup(ctx context.Context, in *DeleteGroupReq, opts ...grpc.CallOption) (*Empty, error) {
+	out := new(Empty)
+	err := c.cc.Invoke(ctx, "/schedule.ScheduleService/DeleteGroup", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *scheduleServiceClient) Attandence(ctx context.Context, in *AttandenceReq, opts ...grpc.CallOption) (*Empty, error) {
+	out := new(Empty)
+	err := c.cc.Invoke(ctx, "/schedule.ScheduleService/Attandence", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *scheduleServiceClient) GetGroup(ctx context.Context, in *GetGroupReq, opts ...grpc.CallOption) (*GetGroupRes, error) {
+	out := new(GetGroupRes)
+	err := c.cc.Invoke(ctx, "/schedule.ScheduleService/GetGroup", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *scheduleServiceClient) ListGroups(ctx context.Context, in *ListGroupsReq, opts ...grpc.CallOption) (*ListGroupsRes, error) {
+	out := new(ListGroupsRes)
+	err := c.cc.Invoke(ctx, "/schedule.ScheduleService/ListGroups", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // ScheduleServiceServer is the server API for ScheduleService service.
 type ScheduleServiceServer interface {
 	CreateGroup(context.Context, *CreateGroupReq) (*CreateGroupRes, error)
 	// rpc UpdateGroup(UpdateGroupReq) returns (UpdateGroupRes);
 	GetAllGroup(context.Context, *Empty) (*GetAllGroupRes, error)
+	DeleteGroup(context.Context, *DeleteGroupReq) (*Empty, error)
+	Attandence(context.Context, *AttandenceReq) (*Empty, error)
+	GetGroup(context.Context, *GetGroupReq) (*GetGroupRes, error)
+	ListGroups(context.Context, *ListGroupsReq) (*ListGroupsRes, error)
 }
 
 // UnimplementedScheduleServiceServer can be embedded to have forward compatible implementations.
@@ -557,6 +1194,18 @@ func (*UnimplementedScheduleServiceServer) CreateGroup(ctx context.Context, req 
 }
 func (*UnimplementedScheduleServiceServer) GetAllGroup(ctx context.Context, req *Empty) (*GetAllGroupRes, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetAllGroup not implemented")
+}
+func (*UnimplementedScheduleServiceServer) DeleteGroup(ctx context.Context, req *DeleteGroupReq) (*Empty, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DeleteGroup not implemented")
+}
+func (*UnimplementedScheduleServiceServer) Attandence(ctx context.Context, req *AttandenceReq) (*Empty, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method Attandence not implemented")
+}
+func (*UnimplementedScheduleServiceServer) GetGroup(ctx context.Context, req *GetGroupReq) (*GetGroupRes, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetGroup not implemented")
+}
+func (*UnimplementedScheduleServiceServer) ListGroups(ctx context.Context, req *ListGroupsReq) (*ListGroupsRes, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ListGroups not implemented")
 }
 
 func RegisterScheduleServiceServer(s *grpc.Server, srv ScheduleServiceServer) {
@@ -599,6 +1248,78 @@ func _ScheduleService_GetAllGroup_Handler(srv interface{}, ctx context.Context, 
 	return interceptor(ctx, in, info, handler)
 }
 
+func _ScheduleService_DeleteGroup_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(DeleteGroupReq)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ScheduleServiceServer).DeleteGroup(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/schedule.ScheduleService/DeleteGroup",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ScheduleServiceServer).DeleteGroup(ctx, req.(*DeleteGroupReq))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ScheduleService_Attandence_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(AttandenceReq)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ScheduleServiceServer).Attandence(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/schedule.ScheduleService/Attandence",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ScheduleServiceServer).Attandence(ctx, req.(*AttandenceReq))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ScheduleService_GetGroup_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetGroupReq)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ScheduleServiceServer).GetGroup(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/schedule.ScheduleService/GetGroup",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ScheduleServiceServer).GetGroup(ctx, req.(*GetGroupReq))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ScheduleService_ListGroups_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListGroupsReq)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ScheduleServiceServer).ListGroups(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/schedule.ScheduleService/ListGroups",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ScheduleServiceServer).ListGroups(ctx, req.(*ListGroupsReq))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 var _ScheduleService_serviceDesc = grpc.ServiceDesc{
 	ServiceName: "schedule.ScheduleService",
 	HandlerType: (*ScheduleServiceServer)(nil),
@@ -611,9 +1332,465 @@ var _ScheduleService_serviceDesc = grpc.ServiceDesc{
 			MethodName: "GetAllGroup",
 			Handler:    _ScheduleService_GetAllGroup_Handler,
 		},
+		{
+			MethodName: "DeleteGroup",
+			Handler:    _ScheduleService_DeleteGroup_Handler,
+		},
+		{
+			MethodName: "Attandence",
+			Handler:    _ScheduleService_Attandence_Handler,
+		},
+		{
+			MethodName: "GetGroup",
+			Handler:    _ScheduleService_GetGroup_Handler,
+		},
+		{
+			MethodName: "ListGroups",
+			Handler:    _ScheduleService_ListGroups_Handler,
+		},
 	},
 	Streams:  []grpc.StreamDesc{},
 	Metadata: "groups.proto",
+}
+
+func (m *ListGroupsReq) Marshal() (dAtA []byte, err error) {
+	size := m.Size()
+	dAtA = make([]byte, size)
+	n, err := m.MarshalToSizedBuffer(dAtA[:size])
+	if err != nil {
+		return nil, err
+	}
+	return dAtA[:n], nil
+}
+
+func (m *ListGroupsReq) MarshalTo(dAtA []byte) (int, error) {
+	size := m.Size()
+	return m.MarshalToSizedBuffer(dAtA[:size])
+}
+
+func (m *ListGroupsReq) MarshalToSizedBuffer(dAtA []byte) (int, error) {
+	i := len(dAtA)
+	_ = i
+	var l int
+	_ = l
+	if m.XXX_unrecognized != nil {
+		i -= len(m.XXX_unrecognized)
+		copy(dAtA[i:], m.XXX_unrecognized)
+	}
+	if len(m.CompanyId) > 0 {
+		i -= len(m.CompanyId)
+		copy(dAtA[i:], m.CompanyId)
+		i = encodeVarintGroups(dAtA, i, uint64(len(m.CompanyId)))
+		i--
+		dAtA[i] = 0xa
+	}
+	return len(dAtA) - i, nil
+}
+
+func (m *ListGroupsRes) Marshal() (dAtA []byte, err error) {
+	size := m.Size()
+	dAtA = make([]byte, size)
+	n, err := m.MarshalToSizedBuffer(dAtA[:size])
+	if err != nil {
+		return nil, err
+	}
+	return dAtA[:n], nil
+}
+
+func (m *ListGroupsRes) MarshalTo(dAtA []byte) (int, error) {
+	size := m.Size()
+	return m.MarshalToSizedBuffer(dAtA[:size])
+}
+
+func (m *ListGroupsRes) MarshalToSizedBuffer(dAtA []byte) (int, error) {
+	i := len(dAtA)
+	_ = i
+	var l int
+	_ = l
+	if m.XXX_unrecognized != nil {
+		i -= len(m.XXX_unrecognized)
+		copy(dAtA[i:], m.XXX_unrecognized)
+	}
+	if len(m.Groups) > 0 {
+		for iNdEx := len(m.Groups) - 1; iNdEx >= 0; iNdEx-- {
+			{
+				size, err := m.Groups[iNdEx].MarshalToSizedBuffer(dAtA[:i])
+				if err != nil {
+					return 0, err
+				}
+				i -= size
+				i = encodeVarintGroups(dAtA, i, uint64(size))
+			}
+			i--
+			dAtA[i] = 0xa
+		}
+	}
+	return len(dAtA) - i, nil
+}
+
+func (m *ListGroups) Marshal() (dAtA []byte, err error) {
+	size := m.Size()
+	dAtA = make([]byte, size)
+	n, err := m.MarshalToSizedBuffer(dAtA[:size])
+	if err != nil {
+		return nil, err
+	}
+	return dAtA[:n], nil
+}
+
+func (m *ListGroups) MarshalTo(dAtA []byte) (int, error) {
+	size := m.Size()
+	return m.MarshalToSizedBuffer(dAtA[:size])
+}
+
+func (m *ListGroups) MarshalToSizedBuffer(dAtA []byte) (int, error) {
+	i := len(dAtA)
+	_ = i
+	var l int
+	_ = l
+	if m.XXX_unrecognized != nil {
+		i -= len(m.XXX_unrecognized)
+		copy(dAtA[i:], m.XXX_unrecognized)
+	}
+	if len(m.GroupName) > 0 {
+		i -= len(m.GroupName)
+		copy(dAtA[i:], m.GroupName)
+		i = encodeVarintGroups(dAtA, i, uint64(len(m.GroupName)))
+		i--
+		dAtA[i] = 0x12
+	}
+	if len(m.Id) > 0 {
+		i -= len(m.Id)
+		copy(dAtA[i:], m.Id)
+		i = encodeVarintGroups(dAtA, i, uint64(len(m.Id)))
+		i--
+		dAtA[i] = 0xa
+	}
+	return len(dAtA) - i, nil
+}
+
+func (m *GetGroupReq) Marshal() (dAtA []byte, err error) {
+	size := m.Size()
+	dAtA = make([]byte, size)
+	n, err := m.MarshalToSizedBuffer(dAtA[:size])
+	if err != nil {
+		return nil, err
+	}
+	return dAtA[:n], nil
+}
+
+func (m *GetGroupReq) MarshalTo(dAtA []byte) (int, error) {
+	size := m.Size()
+	return m.MarshalToSizedBuffer(dAtA[:size])
+}
+
+func (m *GetGroupReq) MarshalToSizedBuffer(dAtA []byte) (int, error) {
+	i := len(dAtA)
+	_ = i
+	var l int
+	_ = l
+	if m.XXX_unrecognized != nil {
+		i -= len(m.XXX_unrecognized)
+		copy(dAtA[i:], m.XXX_unrecognized)
+	}
+	if len(m.Id) > 0 {
+		i -= len(m.Id)
+		copy(dAtA[i:], m.Id)
+		i = encodeVarintGroups(dAtA, i, uint64(len(m.Id)))
+		i--
+		dAtA[i] = 0xa
+	}
+	return len(dAtA) - i, nil
+}
+
+func (m *GetGroupRes) Marshal() (dAtA []byte, err error) {
+	size := m.Size()
+	dAtA = make([]byte, size)
+	n, err := m.MarshalToSizedBuffer(dAtA[:size])
+	if err != nil {
+		return nil, err
+	}
+	return dAtA[:n], nil
+}
+
+func (m *GetGroupRes) MarshalTo(dAtA []byte) (int, error) {
+	size := m.Size()
+	return m.MarshalToSizedBuffer(dAtA[:size])
+}
+
+func (m *GetGroupRes) MarshalToSizedBuffer(dAtA []byte) (int, error) {
+	i := len(dAtA)
+	_ = i
+	var l int
+	_ = l
+	if m.XXX_unrecognized != nil {
+		i -= len(m.XXX_unrecognized)
+		copy(dAtA[i:], m.XXX_unrecognized)
+	}
+	if len(m.Students) > 0 {
+		for iNdEx := len(m.Students) - 1; iNdEx >= 0; iNdEx-- {
+			{
+				size, err := m.Students[iNdEx].MarshalToSizedBuffer(dAtA[:i])
+				if err != nil {
+					return 0, err
+				}
+				i -= size
+				i = encodeVarintGroups(dAtA, i, uint64(size))
+			}
+			i--
+			dAtA[i] = 0xa
+		}
+	}
+	return len(dAtA) - i, nil
+}
+
+func (m *GetGrooup) Marshal() (dAtA []byte, err error) {
+	size := m.Size()
+	dAtA = make([]byte, size)
+	n, err := m.MarshalToSizedBuffer(dAtA[:size])
+	if err != nil {
+		return nil, err
+	}
+	return dAtA[:n], nil
+}
+
+func (m *GetGrooup) MarshalTo(dAtA []byte) (int, error) {
+	size := m.Size()
+	return m.MarshalToSizedBuffer(dAtA[:size])
+}
+
+func (m *GetGrooup) MarshalToSizedBuffer(dAtA []byte) (int, error) {
+	i := len(dAtA)
+	_ = i
+	var l int
+	_ = l
+	if m.XXX_unrecognized != nil {
+		i -= len(m.XXX_unrecognized)
+		copy(dAtA[i:], m.XXX_unrecognized)
+	}
+	if len(m.GroupId) > 0 {
+		i -= len(m.GroupId)
+		copy(dAtA[i:], m.GroupId)
+		i = encodeVarintGroups(dAtA, i, uint64(len(m.GroupId)))
+		i--
+		dAtA[i] = 0x12
+	}
+	if len(m.Id) > 0 {
+		i -= len(m.Id)
+		copy(dAtA[i:], m.Id)
+		i = encodeVarintGroups(dAtA, i, uint64(len(m.Id)))
+		i--
+		dAtA[i] = 0xa
+	}
+	return len(dAtA) - i, nil
+}
+
+func (m *AttandenceRequa) Marshal() (dAtA []byte, err error) {
+	size := m.Size()
+	dAtA = make([]byte, size)
+	n, err := m.MarshalToSizedBuffer(dAtA[:size])
+	if err != nil {
+		return nil, err
+	}
+	return dAtA[:n], nil
+}
+
+func (m *AttandenceRequa) MarshalTo(dAtA []byte) (int, error) {
+	size := m.Size()
+	return m.MarshalToSizedBuffer(dAtA[:size])
+}
+
+func (m *AttandenceRequa) MarshalToSizedBuffer(dAtA []byte) (int, error) {
+	i := len(dAtA)
+	_ = i
+	var l int
+	_ = l
+	if m.XXX_unrecognized != nil {
+		i -= len(m.XXX_unrecognized)
+		copy(dAtA[i:], m.XXX_unrecognized)
+	}
+	if len(m.Feedback) > 0 {
+		i -= len(m.Feedback)
+		copy(dAtA[i:], m.Feedback)
+		i = encodeVarintGroups(dAtA, i, uint64(len(m.Feedback)))
+		i--
+		dAtA[i] = 0x32
+	}
+	if len(m.AttendanceDate) > 0 {
+		i -= len(m.AttendanceDate)
+		copy(dAtA[i:], m.AttendanceDate)
+		i = encodeVarintGroups(dAtA, i, uint64(len(m.AttendanceDate)))
+		i--
+		dAtA[i] = 0x2a
+	}
+	if m.Attendance {
+		i--
+		if m.Attendance {
+			dAtA[i] = 1
+		} else {
+			dAtA[i] = 0
+		}
+		i--
+		dAtA[i] = 0x20
+	}
+	if len(m.GroupId) > 0 {
+		i -= len(m.GroupId)
+		copy(dAtA[i:], m.GroupId)
+		i = encodeVarintGroups(dAtA, i, uint64(len(m.GroupId)))
+		i--
+		dAtA[i] = 0x1a
+	}
+	if len(m.StudentId) > 0 {
+		i -= len(m.StudentId)
+		copy(dAtA[i:], m.StudentId)
+		i = encodeVarintGroups(dAtA, i, uint64(len(m.StudentId)))
+		i--
+		dAtA[i] = 0x12
+	}
+	if len(m.Id) > 0 {
+		i -= len(m.Id)
+		copy(dAtA[i:], m.Id)
+		i = encodeVarintGroups(dAtA, i, uint64(len(m.Id)))
+		i--
+		dAtA[i] = 0xa
+	}
+	return len(dAtA) - i, nil
+}
+
+func (m *AttandenceReq) Marshal() (dAtA []byte, err error) {
+	size := m.Size()
+	dAtA = make([]byte, size)
+	n, err := m.MarshalToSizedBuffer(dAtA[:size])
+	if err != nil {
+		return nil, err
+	}
+	return dAtA[:n], nil
+}
+
+func (m *AttandenceReq) MarshalTo(dAtA []byte) (int, error) {
+	size := m.Size()
+	return m.MarshalToSizedBuffer(dAtA[:size])
+}
+
+func (m *AttandenceReq) MarshalToSizedBuffer(dAtA []byte) (int, error) {
+	i := len(dAtA)
+	_ = i
+	var l int
+	_ = l
+	if m.XXX_unrecognized != nil {
+		i -= len(m.XXX_unrecognized)
+		copy(dAtA[i:], m.XXX_unrecognized)
+	}
+	if len(m.Student) > 0 {
+		for iNdEx := len(m.Student) - 1; iNdEx >= 0; iNdEx-- {
+			{
+				size, err := m.Student[iNdEx].MarshalToSizedBuffer(dAtA[:i])
+				if err != nil {
+					return 0, err
+				}
+				i -= size
+				i = encodeVarintGroups(dAtA, i, uint64(size))
+			}
+			i--
+			dAtA[i] = 0xa
+		}
+	}
+	return len(dAtA) - i, nil
+}
+
+func (m *GetByIdReq) Marshal() (dAtA []byte, err error) {
+	size := m.Size()
+	dAtA = make([]byte, size)
+	n, err := m.MarshalToSizedBuffer(dAtA[:size])
+	if err != nil {
+		return nil, err
+	}
+	return dAtA[:n], nil
+}
+
+func (m *GetByIdReq) MarshalTo(dAtA []byte) (int, error) {
+	size := m.Size()
+	return m.MarshalToSizedBuffer(dAtA[:size])
+}
+
+func (m *GetByIdReq) MarshalToSizedBuffer(dAtA []byte) (int, error) {
+	i := len(dAtA)
+	_ = i
+	var l int
+	_ = l
+	if m.XXX_unrecognized != nil {
+		i -= len(m.XXX_unrecognized)
+		copy(dAtA[i:], m.XXX_unrecognized)
+	}
+	if len(m.Id) > 0 {
+		i -= len(m.Id)
+		copy(dAtA[i:], m.Id)
+		i = encodeVarintGroups(dAtA, i, uint64(len(m.Id)))
+		i--
+		dAtA[i] = 0xa
+	}
+	return len(dAtA) - i, nil
+}
+
+func (m *GetByIdRes) Marshal() (dAtA []byte, err error) {
+	size := m.Size()
+	dAtA = make([]byte, size)
+	n, err := m.MarshalToSizedBuffer(dAtA[:size])
+	if err != nil {
+		return nil, err
+	}
+	return dAtA[:n], nil
+}
+
+func (m *GetByIdRes) MarshalTo(dAtA []byte) (int, error) {
+	size := m.Size()
+	return m.MarshalToSizedBuffer(dAtA[:size])
+}
+
+func (m *GetByIdRes) MarshalToSizedBuffer(dAtA []byte) (int, error) {
+	i := len(dAtA)
+	_ = i
+	var l int
+	_ = l
+	if m.XXX_unrecognized != nil {
+		i -= len(m.XXX_unrecognized)
+		copy(dAtA[i:], m.XXX_unrecognized)
+	}
+	return len(dAtA) - i, nil
+}
+
+func (m *DeleteGroupReq) Marshal() (dAtA []byte, err error) {
+	size := m.Size()
+	dAtA = make([]byte, size)
+	n, err := m.MarshalToSizedBuffer(dAtA[:size])
+	if err != nil {
+		return nil, err
+	}
+	return dAtA[:n], nil
+}
+
+func (m *DeleteGroupReq) MarshalTo(dAtA []byte) (int, error) {
+	size := m.Size()
+	return m.MarshalToSizedBuffer(dAtA[:size])
+}
+
+func (m *DeleteGroupReq) MarshalToSizedBuffer(dAtA []byte) (int, error) {
+	i := len(dAtA)
+	_ = i
+	var l int
+	_ = l
+	if m.XXX_unrecognized != nil {
+		i -= len(m.XXX_unrecognized)
+		copy(dAtA[i:], m.XXX_unrecognized)
+	}
+	if len(m.Id) > 0 {
+		i -= len(m.Id)
+		copy(dAtA[i:], m.Id)
+		i = encodeVarintGroups(dAtA, i, uint64(len(m.Id)))
+		i--
+		dAtA[i] = 0xa
+	}
+	return len(dAtA) - i, nil
 }
 
 func (m *CreateGroupReq) Marshal() (dAtA []byte, err error) {
@@ -963,6 +2140,211 @@ func encodeVarintGroups(dAtA []byte, offset int, v uint64) int {
 	dAtA[offset] = uint8(v)
 	return base
 }
+func (m *ListGroupsReq) Size() (n int) {
+	if m == nil {
+		return 0
+	}
+	var l int
+	_ = l
+	l = len(m.CompanyId)
+	if l > 0 {
+		n += 1 + l + sovGroups(uint64(l))
+	}
+	if m.XXX_unrecognized != nil {
+		n += len(m.XXX_unrecognized)
+	}
+	return n
+}
+
+func (m *ListGroupsRes) Size() (n int) {
+	if m == nil {
+		return 0
+	}
+	var l int
+	_ = l
+	if len(m.Groups) > 0 {
+		for _, e := range m.Groups {
+			l = e.Size()
+			n += 1 + l + sovGroups(uint64(l))
+		}
+	}
+	if m.XXX_unrecognized != nil {
+		n += len(m.XXX_unrecognized)
+	}
+	return n
+}
+
+func (m *ListGroups) Size() (n int) {
+	if m == nil {
+		return 0
+	}
+	var l int
+	_ = l
+	l = len(m.Id)
+	if l > 0 {
+		n += 1 + l + sovGroups(uint64(l))
+	}
+	l = len(m.GroupName)
+	if l > 0 {
+		n += 1 + l + sovGroups(uint64(l))
+	}
+	if m.XXX_unrecognized != nil {
+		n += len(m.XXX_unrecognized)
+	}
+	return n
+}
+
+func (m *GetGroupReq) Size() (n int) {
+	if m == nil {
+		return 0
+	}
+	var l int
+	_ = l
+	l = len(m.Id)
+	if l > 0 {
+		n += 1 + l + sovGroups(uint64(l))
+	}
+	if m.XXX_unrecognized != nil {
+		n += len(m.XXX_unrecognized)
+	}
+	return n
+}
+
+func (m *GetGroupRes) Size() (n int) {
+	if m == nil {
+		return 0
+	}
+	var l int
+	_ = l
+	if len(m.Students) > 0 {
+		for _, e := range m.Students {
+			l = e.Size()
+			n += 1 + l + sovGroups(uint64(l))
+		}
+	}
+	if m.XXX_unrecognized != nil {
+		n += len(m.XXX_unrecognized)
+	}
+	return n
+}
+
+func (m *GetGrooup) Size() (n int) {
+	if m == nil {
+		return 0
+	}
+	var l int
+	_ = l
+	l = len(m.Id)
+	if l > 0 {
+		n += 1 + l + sovGroups(uint64(l))
+	}
+	l = len(m.GroupId)
+	if l > 0 {
+		n += 1 + l + sovGroups(uint64(l))
+	}
+	if m.XXX_unrecognized != nil {
+		n += len(m.XXX_unrecognized)
+	}
+	return n
+}
+
+func (m *AttandenceRequa) Size() (n int) {
+	if m == nil {
+		return 0
+	}
+	var l int
+	_ = l
+	l = len(m.Id)
+	if l > 0 {
+		n += 1 + l + sovGroups(uint64(l))
+	}
+	l = len(m.StudentId)
+	if l > 0 {
+		n += 1 + l + sovGroups(uint64(l))
+	}
+	l = len(m.GroupId)
+	if l > 0 {
+		n += 1 + l + sovGroups(uint64(l))
+	}
+	if m.Attendance {
+		n += 2
+	}
+	l = len(m.AttendanceDate)
+	if l > 0 {
+		n += 1 + l + sovGroups(uint64(l))
+	}
+	l = len(m.Feedback)
+	if l > 0 {
+		n += 1 + l + sovGroups(uint64(l))
+	}
+	if m.XXX_unrecognized != nil {
+		n += len(m.XXX_unrecognized)
+	}
+	return n
+}
+
+func (m *AttandenceReq) Size() (n int) {
+	if m == nil {
+		return 0
+	}
+	var l int
+	_ = l
+	if len(m.Student) > 0 {
+		for _, e := range m.Student {
+			l = e.Size()
+			n += 1 + l + sovGroups(uint64(l))
+		}
+	}
+	if m.XXX_unrecognized != nil {
+		n += len(m.XXX_unrecognized)
+	}
+	return n
+}
+
+func (m *GetByIdReq) Size() (n int) {
+	if m == nil {
+		return 0
+	}
+	var l int
+	_ = l
+	l = len(m.Id)
+	if l > 0 {
+		n += 1 + l + sovGroups(uint64(l))
+	}
+	if m.XXX_unrecognized != nil {
+		n += len(m.XXX_unrecognized)
+	}
+	return n
+}
+
+func (m *GetByIdRes) Size() (n int) {
+	if m == nil {
+		return 0
+	}
+	var l int
+	_ = l
+	if m.XXX_unrecognized != nil {
+		n += len(m.XXX_unrecognized)
+	}
+	return n
+}
+
+func (m *DeleteGroupReq) Size() (n int) {
+	if m == nil {
+		return 0
+	}
+	var l int
+	_ = l
+	l = len(m.Id)
+	if l > 0 {
+		n += 1 + l + sovGroups(uint64(l))
+	}
+	if m.XXX_unrecognized != nil {
+		n += len(m.XXX_unrecognized)
+	}
+	return n
+}
+
 func (m *CreateGroupReq) Size() (n int) {
 	if m == nil {
 		return 0
@@ -1134,6 +2516,1105 @@ func sovGroups(x uint64) (n int) {
 }
 func sozGroups(x uint64) (n int) {
 	return sovGroups(uint64((x << 1) ^ uint64((int64(x) >> 63))))
+}
+func (m *ListGroupsReq) Unmarshal(dAtA []byte) error {
+	l := len(dAtA)
+	iNdEx := 0
+	for iNdEx < l {
+		preIndex := iNdEx
+		var wire uint64
+		for shift := uint(0); ; shift += 7 {
+			if shift >= 64 {
+				return ErrIntOverflowGroups
+			}
+			if iNdEx >= l {
+				return io.ErrUnexpectedEOF
+			}
+			b := dAtA[iNdEx]
+			iNdEx++
+			wire |= uint64(b&0x7F) << shift
+			if b < 0x80 {
+				break
+			}
+		}
+		fieldNum := int32(wire >> 3)
+		wireType := int(wire & 0x7)
+		if wireType == 4 {
+			return fmt.Errorf("proto: ListGroupsReq: wiretype end group for non-group")
+		}
+		if fieldNum <= 0 {
+			return fmt.Errorf("proto: ListGroupsReq: illegal tag %d (wire type %d)", fieldNum, wire)
+		}
+		switch fieldNum {
+		case 1:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field CompanyId", wireType)
+			}
+			var stringLen uint64
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowGroups
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				stringLen |= uint64(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			intStringLen := int(stringLen)
+			if intStringLen < 0 {
+				return ErrInvalidLengthGroups
+			}
+			postIndex := iNdEx + intStringLen
+			if postIndex < 0 {
+				return ErrInvalidLengthGroups
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			m.CompanyId = string(dAtA[iNdEx:postIndex])
+			iNdEx = postIndex
+		default:
+			iNdEx = preIndex
+			skippy, err := skipGroups(dAtA[iNdEx:])
+			if err != nil {
+				return err
+			}
+			if (skippy < 0) || (iNdEx+skippy) < 0 {
+				return ErrInvalidLengthGroups
+			}
+			if (iNdEx + skippy) > l {
+				return io.ErrUnexpectedEOF
+			}
+			m.XXX_unrecognized = append(m.XXX_unrecognized, dAtA[iNdEx:iNdEx+skippy]...)
+			iNdEx += skippy
+		}
+	}
+
+	if iNdEx > l {
+		return io.ErrUnexpectedEOF
+	}
+	return nil
+}
+func (m *ListGroupsRes) Unmarshal(dAtA []byte) error {
+	l := len(dAtA)
+	iNdEx := 0
+	for iNdEx < l {
+		preIndex := iNdEx
+		var wire uint64
+		for shift := uint(0); ; shift += 7 {
+			if shift >= 64 {
+				return ErrIntOverflowGroups
+			}
+			if iNdEx >= l {
+				return io.ErrUnexpectedEOF
+			}
+			b := dAtA[iNdEx]
+			iNdEx++
+			wire |= uint64(b&0x7F) << shift
+			if b < 0x80 {
+				break
+			}
+		}
+		fieldNum := int32(wire >> 3)
+		wireType := int(wire & 0x7)
+		if wireType == 4 {
+			return fmt.Errorf("proto: ListGroupsRes: wiretype end group for non-group")
+		}
+		if fieldNum <= 0 {
+			return fmt.Errorf("proto: ListGroupsRes: illegal tag %d (wire type %d)", fieldNum, wire)
+		}
+		switch fieldNum {
+		case 1:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Groups", wireType)
+			}
+			var msglen int
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowGroups
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				msglen |= int(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			if msglen < 0 {
+				return ErrInvalidLengthGroups
+			}
+			postIndex := iNdEx + msglen
+			if postIndex < 0 {
+				return ErrInvalidLengthGroups
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			m.Groups = append(m.Groups, &ListGroups{})
+			if err := m.Groups[len(m.Groups)-1].Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
+				return err
+			}
+			iNdEx = postIndex
+		default:
+			iNdEx = preIndex
+			skippy, err := skipGroups(dAtA[iNdEx:])
+			if err != nil {
+				return err
+			}
+			if (skippy < 0) || (iNdEx+skippy) < 0 {
+				return ErrInvalidLengthGroups
+			}
+			if (iNdEx + skippy) > l {
+				return io.ErrUnexpectedEOF
+			}
+			m.XXX_unrecognized = append(m.XXX_unrecognized, dAtA[iNdEx:iNdEx+skippy]...)
+			iNdEx += skippy
+		}
+	}
+
+	if iNdEx > l {
+		return io.ErrUnexpectedEOF
+	}
+	return nil
+}
+func (m *ListGroups) Unmarshal(dAtA []byte) error {
+	l := len(dAtA)
+	iNdEx := 0
+	for iNdEx < l {
+		preIndex := iNdEx
+		var wire uint64
+		for shift := uint(0); ; shift += 7 {
+			if shift >= 64 {
+				return ErrIntOverflowGroups
+			}
+			if iNdEx >= l {
+				return io.ErrUnexpectedEOF
+			}
+			b := dAtA[iNdEx]
+			iNdEx++
+			wire |= uint64(b&0x7F) << shift
+			if b < 0x80 {
+				break
+			}
+		}
+		fieldNum := int32(wire >> 3)
+		wireType := int(wire & 0x7)
+		if wireType == 4 {
+			return fmt.Errorf("proto: ListGroups: wiretype end group for non-group")
+		}
+		if fieldNum <= 0 {
+			return fmt.Errorf("proto: ListGroups: illegal tag %d (wire type %d)", fieldNum, wire)
+		}
+		switch fieldNum {
+		case 1:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Id", wireType)
+			}
+			var stringLen uint64
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowGroups
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				stringLen |= uint64(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			intStringLen := int(stringLen)
+			if intStringLen < 0 {
+				return ErrInvalidLengthGroups
+			}
+			postIndex := iNdEx + intStringLen
+			if postIndex < 0 {
+				return ErrInvalidLengthGroups
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			m.Id = string(dAtA[iNdEx:postIndex])
+			iNdEx = postIndex
+		case 2:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field GroupName", wireType)
+			}
+			var stringLen uint64
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowGroups
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				stringLen |= uint64(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			intStringLen := int(stringLen)
+			if intStringLen < 0 {
+				return ErrInvalidLengthGroups
+			}
+			postIndex := iNdEx + intStringLen
+			if postIndex < 0 {
+				return ErrInvalidLengthGroups
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			m.GroupName = string(dAtA[iNdEx:postIndex])
+			iNdEx = postIndex
+		default:
+			iNdEx = preIndex
+			skippy, err := skipGroups(dAtA[iNdEx:])
+			if err != nil {
+				return err
+			}
+			if (skippy < 0) || (iNdEx+skippy) < 0 {
+				return ErrInvalidLengthGroups
+			}
+			if (iNdEx + skippy) > l {
+				return io.ErrUnexpectedEOF
+			}
+			m.XXX_unrecognized = append(m.XXX_unrecognized, dAtA[iNdEx:iNdEx+skippy]...)
+			iNdEx += skippy
+		}
+	}
+
+	if iNdEx > l {
+		return io.ErrUnexpectedEOF
+	}
+	return nil
+}
+func (m *GetGroupReq) Unmarshal(dAtA []byte) error {
+	l := len(dAtA)
+	iNdEx := 0
+	for iNdEx < l {
+		preIndex := iNdEx
+		var wire uint64
+		for shift := uint(0); ; shift += 7 {
+			if shift >= 64 {
+				return ErrIntOverflowGroups
+			}
+			if iNdEx >= l {
+				return io.ErrUnexpectedEOF
+			}
+			b := dAtA[iNdEx]
+			iNdEx++
+			wire |= uint64(b&0x7F) << shift
+			if b < 0x80 {
+				break
+			}
+		}
+		fieldNum := int32(wire >> 3)
+		wireType := int(wire & 0x7)
+		if wireType == 4 {
+			return fmt.Errorf("proto: GetGroupReq: wiretype end group for non-group")
+		}
+		if fieldNum <= 0 {
+			return fmt.Errorf("proto: GetGroupReq: illegal tag %d (wire type %d)", fieldNum, wire)
+		}
+		switch fieldNum {
+		case 1:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Id", wireType)
+			}
+			var stringLen uint64
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowGroups
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				stringLen |= uint64(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			intStringLen := int(stringLen)
+			if intStringLen < 0 {
+				return ErrInvalidLengthGroups
+			}
+			postIndex := iNdEx + intStringLen
+			if postIndex < 0 {
+				return ErrInvalidLengthGroups
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			m.Id = string(dAtA[iNdEx:postIndex])
+			iNdEx = postIndex
+		default:
+			iNdEx = preIndex
+			skippy, err := skipGroups(dAtA[iNdEx:])
+			if err != nil {
+				return err
+			}
+			if (skippy < 0) || (iNdEx+skippy) < 0 {
+				return ErrInvalidLengthGroups
+			}
+			if (iNdEx + skippy) > l {
+				return io.ErrUnexpectedEOF
+			}
+			m.XXX_unrecognized = append(m.XXX_unrecognized, dAtA[iNdEx:iNdEx+skippy]...)
+			iNdEx += skippy
+		}
+	}
+
+	if iNdEx > l {
+		return io.ErrUnexpectedEOF
+	}
+	return nil
+}
+func (m *GetGroupRes) Unmarshal(dAtA []byte) error {
+	l := len(dAtA)
+	iNdEx := 0
+	for iNdEx < l {
+		preIndex := iNdEx
+		var wire uint64
+		for shift := uint(0); ; shift += 7 {
+			if shift >= 64 {
+				return ErrIntOverflowGroups
+			}
+			if iNdEx >= l {
+				return io.ErrUnexpectedEOF
+			}
+			b := dAtA[iNdEx]
+			iNdEx++
+			wire |= uint64(b&0x7F) << shift
+			if b < 0x80 {
+				break
+			}
+		}
+		fieldNum := int32(wire >> 3)
+		wireType := int(wire & 0x7)
+		if wireType == 4 {
+			return fmt.Errorf("proto: GetGroupRes: wiretype end group for non-group")
+		}
+		if fieldNum <= 0 {
+			return fmt.Errorf("proto: GetGroupRes: illegal tag %d (wire type %d)", fieldNum, wire)
+		}
+		switch fieldNum {
+		case 1:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Students", wireType)
+			}
+			var msglen int
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowGroups
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				msglen |= int(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			if msglen < 0 {
+				return ErrInvalidLengthGroups
+			}
+			postIndex := iNdEx + msglen
+			if postIndex < 0 {
+				return ErrInvalidLengthGroups
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			m.Students = append(m.Students, &GetGrooup{})
+			if err := m.Students[len(m.Students)-1].Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
+				return err
+			}
+			iNdEx = postIndex
+		default:
+			iNdEx = preIndex
+			skippy, err := skipGroups(dAtA[iNdEx:])
+			if err != nil {
+				return err
+			}
+			if (skippy < 0) || (iNdEx+skippy) < 0 {
+				return ErrInvalidLengthGroups
+			}
+			if (iNdEx + skippy) > l {
+				return io.ErrUnexpectedEOF
+			}
+			m.XXX_unrecognized = append(m.XXX_unrecognized, dAtA[iNdEx:iNdEx+skippy]...)
+			iNdEx += skippy
+		}
+	}
+
+	if iNdEx > l {
+		return io.ErrUnexpectedEOF
+	}
+	return nil
+}
+func (m *GetGrooup) Unmarshal(dAtA []byte) error {
+	l := len(dAtA)
+	iNdEx := 0
+	for iNdEx < l {
+		preIndex := iNdEx
+		var wire uint64
+		for shift := uint(0); ; shift += 7 {
+			if shift >= 64 {
+				return ErrIntOverflowGroups
+			}
+			if iNdEx >= l {
+				return io.ErrUnexpectedEOF
+			}
+			b := dAtA[iNdEx]
+			iNdEx++
+			wire |= uint64(b&0x7F) << shift
+			if b < 0x80 {
+				break
+			}
+		}
+		fieldNum := int32(wire >> 3)
+		wireType := int(wire & 0x7)
+		if wireType == 4 {
+			return fmt.Errorf("proto: GetGrooup: wiretype end group for non-group")
+		}
+		if fieldNum <= 0 {
+			return fmt.Errorf("proto: GetGrooup: illegal tag %d (wire type %d)", fieldNum, wire)
+		}
+		switch fieldNum {
+		case 1:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Id", wireType)
+			}
+			var stringLen uint64
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowGroups
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				stringLen |= uint64(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			intStringLen := int(stringLen)
+			if intStringLen < 0 {
+				return ErrInvalidLengthGroups
+			}
+			postIndex := iNdEx + intStringLen
+			if postIndex < 0 {
+				return ErrInvalidLengthGroups
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			m.Id = string(dAtA[iNdEx:postIndex])
+			iNdEx = postIndex
+		case 2:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field GroupId", wireType)
+			}
+			var stringLen uint64
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowGroups
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				stringLen |= uint64(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			intStringLen := int(stringLen)
+			if intStringLen < 0 {
+				return ErrInvalidLengthGroups
+			}
+			postIndex := iNdEx + intStringLen
+			if postIndex < 0 {
+				return ErrInvalidLengthGroups
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			m.GroupId = string(dAtA[iNdEx:postIndex])
+			iNdEx = postIndex
+		default:
+			iNdEx = preIndex
+			skippy, err := skipGroups(dAtA[iNdEx:])
+			if err != nil {
+				return err
+			}
+			if (skippy < 0) || (iNdEx+skippy) < 0 {
+				return ErrInvalidLengthGroups
+			}
+			if (iNdEx + skippy) > l {
+				return io.ErrUnexpectedEOF
+			}
+			m.XXX_unrecognized = append(m.XXX_unrecognized, dAtA[iNdEx:iNdEx+skippy]...)
+			iNdEx += skippy
+		}
+	}
+
+	if iNdEx > l {
+		return io.ErrUnexpectedEOF
+	}
+	return nil
+}
+func (m *AttandenceRequa) Unmarshal(dAtA []byte) error {
+	l := len(dAtA)
+	iNdEx := 0
+	for iNdEx < l {
+		preIndex := iNdEx
+		var wire uint64
+		for shift := uint(0); ; shift += 7 {
+			if shift >= 64 {
+				return ErrIntOverflowGroups
+			}
+			if iNdEx >= l {
+				return io.ErrUnexpectedEOF
+			}
+			b := dAtA[iNdEx]
+			iNdEx++
+			wire |= uint64(b&0x7F) << shift
+			if b < 0x80 {
+				break
+			}
+		}
+		fieldNum := int32(wire >> 3)
+		wireType := int(wire & 0x7)
+		if wireType == 4 {
+			return fmt.Errorf("proto: AttandenceRequa: wiretype end group for non-group")
+		}
+		if fieldNum <= 0 {
+			return fmt.Errorf("proto: AttandenceRequa: illegal tag %d (wire type %d)", fieldNum, wire)
+		}
+		switch fieldNum {
+		case 1:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Id", wireType)
+			}
+			var stringLen uint64
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowGroups
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				stringLen |= uint64(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			intStringLen := int(stringLen)
+			if intStringLen < 0 {
+				return ErrInvalidLengthGroups
+			}
+			postIndex := iNdEx + intStringLen
+			if postIndex < 0 {
+				return ErrInvalidLengthGroups
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			m.Id = string(dAtA[iNdEx:postIndex])
+			iNdEx = postIndex
+		case 2:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field StudentId", wireType)
+			}
+			var stringLen uint64
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowGroups
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				stringLen |= uint64(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			intStringLen := int(stringLen)
+			if intStringLen < 0 {
+				return ErrInvalidLengthGroups
+			}
+			postIndex := iNdEx + intStringLen
+			if postIndex < 0 {
+				return ErrInvalidLengthGroups
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			m.StudentId = string(dAtA[iNdEx:postIndex])
+			iNdEx = postIndex
+		case 3:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field GroupId", wireType)
+			}
+			var stringLen uint64
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowGroups
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				stringLen |= uint64(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			intStringLen := int(stringLen)
+			if intStringLen < 0 {
+				return ErrInvalidLengthGroups
+			}
+			postIndex := iNdEx + intStringLen
+			if postIndex < 0 {
+				return ErrInvalidLengthGroups
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			m.GroupId = string(dAtA[iNdEx:postIndex])
+			iNdEx = postIndex
+		case 4:
+			if wireType != 0 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Attendance", wireType)
+			}
+			var v int
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowGroups
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				v |= int(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			m.Attendance = bool(v != 0)
+		case 5:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field AttendanceDate", wireType)
+			}
+			var stringLen uint64
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowGroups
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				stringLen |= uint64(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			intStringLen := int(stringLen)
+			if intStringLen < 0 {
+				return ErrInvalidLengthGroups
+			}
+			postIndex := iNdEx + intStringLen
+			if postIndex < 0 {
+				return ErrInvalidLengthGroups
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			m.AttendanceDate = string(dAtA[iNdEx:postIndex])
+			iNdEx = postIndex
+		case 6:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Feedback", wireType)
+			}
+			var stringLen uint64
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowGroups
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				stringLen |= uint64(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			intStringLen := int(stringLen)
+			if intStringLen < 0 {
+				return ErrInvalidLengthGroups
+			}
+			postIndex := iNdEx + intStringLen
+			if postIndex < 0 {
+				return ErrInvalidLengthGroups
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			m.Feedback = string(dAtA[iNdEx:postIndex])
+			iNdEx = postIndex
+		default:
+			iNdEx = preIndex
+			skippy, err := skipGroups(dAtA[iNdEx:])
+			if err != nil {
+				return err
+			}
+			if (skippy < 0) || (iNdEx+skippy) < 0 {
+				return ErrInvalidLengthGroups
+			}
+			if (iNdEx + skippy) > l {
+				return io.ErrUnexpectedEOF
+			}
+			m.XXX_unrecognized = append(m.XXX_unrecognized, dAtA[iNdEx:iNdEx+skippy]...)
+			iNdEx += skippy
+		}
+	}
+
+	if iNdEx > l {
+		return io.ErrUnexpectedEOF
+	}
+	return nil
+}
+func (m *AttandenceReq) Unmarshal(dAtA []byte) error {
+	l := len(dAtA)
+	iNdEx := 0
+	for iNdEx < l {
+		preIndex := iNdEx
+		var wire uint64
+		for shift := uint(0); ; shift += 7 {
+			if shift >= 64 {
+				return ErrIntOverflowGroups
+			}
+			if iNdEx >= l {
+				return io.ErrUnexpectedEOF
+			}
+			b := dAtA[iNdEx]
+			iNdEx++
+			wire |= uint64(b&0x7F) << shift
+			if b < 0x80 {
+				break
+			}
+		}
+		fieldNum := int32(wire >> 3)
+		wireType := int(wire & 0x7)
+		if wireType == 4 {
+			return fmt.Errorf("proto: AttandenceReq: wiretype end group for non-group")
+		}
+		if fieldNum <= 0 {
+			return fmt.Errorf("proto: AttandenceReq: illegal tag %d (wire type %d)", fieldNum, wire)
+		}
+		switch fieldNum {
+		case 1:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Student", wireType)
+			}
+			var msglen int
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowGroups
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				msglen |= int(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			if msglen < 0 {
+				return ErrInvalidLengthGroups
+			}
+			postIndex := iNdEx + msglen
+			if postIndex < 0 {
+				return ErrInvalidLengthGroups
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			m.Student = append(m.Student, &AttandenceRequa{})
+			if err := m.Student[len(m.Student)-1].Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
+				return err
+			}
+			iNdEx = postIndex
+		default:
+			iNdEx = preIndex
+			skippy, err := skipGroups(dAtA[iNdEx:])
+			if err != nil {
+				return err
+			}
+			if (skippy < 0) || (iNdEx+skippy) < 0 {
+				return ErrInvalidLengthGroups
+			}
+			if (iNdEx + skippy) > l {
+				return io.ErrUnexpectedEOF
+			}
+			m.XXX_unrecognized = append(m.XXX_unrecognized, dAtA[iNdEx:iNdEx+skippy]...)
+			iNdEx += skippy
+		}
+	}
+
+	if iNdEx > l {
+		return io.ErrUnexpectedEOF
+	}
+	return nil
+}
+func (m *GetByIdReq) Unmarshal(dAtA []byte) error {
+	l := len(dAtA)
+	iNdEx := 0
+	for iNdEx < l {
+		preIndex := iNdEx
+		var wire uint64
+		for shift := uint(0); ; shift += 7 {
+			if shift >= 64 {
+				return ErrIntOverflowGroups
+			}
+			if iNdEx >= l {
+				return io.ErrUnexpectedEOF
+			}
+			b := dAtA[iNdEx]
+			iNdEx++
+			wire |= uint64(b&0x7F) << shift
+			if b < 0x80 {
+				break
+			}
+		}
+		fieldNum := int32(wire >> 3)
+		wireType := int(wire & 0x7)
+		if wireType == 4 {
+			return fmt.Errorf("proto: GetByIdReq: wiretype end group for non-group")
+		}
+		if fieldNum <= 0 {
+			return fmt.Errorf("proto: GetByIdReq: illegal tag %d (wire type %d)", fieldNum, wire)
+		}
+		switch fieldNum {
+		case 1:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Id", wireType)
+			}
+			var stringLen uint64
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowGroups
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				stringLen |= uint64(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			intStringLen := int(stringLen)
+			if intStringLen < 0 {
+				return ErrInvalidLengthGroups
+			}
+			postIndex := iNdEx + intStringLen
+			if postIndex < 0 {
+				return ErrInvalidLengthGroups
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			m.Id = string(dAtA[iNdEx:postIndex])
+			iNdEx = postIndex
+		default:
+			iNdEx = preIndex
+			skippy, err := skipGroups(dAtA[iNdEx:])
+			if err != nil {
+				return err
+			}
+			if (skippy < 0) || (iNdEx+skippy) < 0 {
+				return ErrInvalidLengthGroups
+			}
+			if (iNdEx + skippy) > l {
+				return io.ErrUnexpectedEOF
+			}
+			m.XXX_unrecognized = append(m.XXX_unrecognized, dAtA[iNdEx:iNdEx+skippy]...)
+			iNdEx += skippy
+		}
+	}
+
+	if iNdEx > l {
+		return io.ErrUnexpectedEOF
+	}
+	return nil
+}
+func (m *GetByIdRes) Unmarshal(dAtA []byte) error {
+	l := len(dAtA)
+	iNdEx := 0
+	for iNdEx < l {
+		preIndex := iNdEx
+		var wire uint64
+		for shift := uint(0); ; shift += 7 {
+			if shift >= 64 {
+				return ErrIntOverflowGroups
+			}
+			if iNdEx >= l {
+				return io.ErrUnexpectedEOF
+			}
+			b := dAtA[iNdEx]
+			iNdEx++
+			wire |= uint64(b&0x7F) << shift
+			if b < 0x80 {
+				break
+			}
+		}
+		fieldNum := int32(wire >> 3)
+		wireType := int(wire & 0x7)
+		if wireType == 4 {
+			return fmt.Errorf("proto: GetByIdRes: wiretype end group for non-group")
+		}
+		if fieldNum <= 0 {
+			return fmt.Errorf("proto: GetByIdRes: illegal tag %d (wire type %d)", fieldNum, wire)
+		}
+		switch fieldNum {
+		default:
+			iNdEx = preIndex
+			skippy, err := skipGroups(dAtA[iNdEx:])
+			if err != nil {
+				return err
+			}
+			if (skippy < 0) || (iNdEx+skippy) < 0 {
+				return ErrInvalidLengthGroups
+			}
+			if (iNdEx + skippy) > l {
+				return io.ErrUnexpectedEOF
+			}
+			m.XXX_unrecognized = append(m.XXX_unrecognized, dAtA[iNdEx:iNdEx+skippy]...)
+			iNdEx += skippy
+		}
+	}
+
+	if iNdEx > l {
+		return io.ErrUnexpectedEOF
+	}
+	return nil
+}
+func (m *DeleteGroupReq) Unmarshal(dAtA []byte) error {
+	l := len(dAtA)
+	iNdEx := 0
+	for iNdEx < l {
+		preIndex := iNdEx
+		var wire uint64
+		for shift := uint(0); ; shift += 7 {
+			if shift >= 64 {
+				return ErrIntOverflowGroups
+			}
+			if iNdEx >= l {
+				return io.ErrUnexpectedEOF
+			}
+			b := dAtA[iNdEx]
+			iNdEx++
+			wire |= uint64(b&0x7F) << shift
+			if b < 0x80 {
+				break
+			}
+		}
+		fieldNum := int32(wire >> 3)
+		wireType := int(wire & 0x7)
+		if wireType == 4 {
+			return fmt.Errorf("proto: DeleteGroupReq: wiretype end group for non-group")
+		}
+		if fieldNum <= 0 {
+			return fmt.Errorf("proto: DeleteGroupReq: illegal tag %d (wire type %d)", fieldNum, wire)
+		}
+		switch fieldNum {
+		case 1:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Id", wireType)
+			}
+			var stringLen uint64
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowGroups
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				stringLen |= uint64(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			intStringLen := int(stringLen)
+			if intStringLen < 0 {
+				return ErrInvalidLengthGroups
+			}
+			postIndex := iNdEx + intStringLen
+			if postIndex < 0 {
+				return ErrInvalidLengthGroups
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			m.Id = string(dAtA[iNdEx:postIndex])
+			iNdEx = postIndex
+		default:
+			iNdEx = preIndex
+			skippy, err := skipGroups(dAtA[iNdEx:])
+			if err != nil {
+				return err
+			}
+			if (skippy < 0) || (iNdEx+skippy) < 0 {
+				return ErrInvalidLengthGroups
+			}
+			if (iNdEx + skippy) > l {
+				return io.ErrUnexpectedEOF
+			}
+			m.XXX_unrecognized = append(m.XXX_unrecognized, dAtA[iNdEx:iNdEx+skippy]...)
+			iNdEx += skippy
+		}
+	}
+
+	if iNdEx > l {
+		return io.ErrUnexpectedEOF
+	}
+	return nil
 }
 func (m *CreateGroupReq) Unmarshal(dAtA []byte) error {
 	l := len(dAtA)
